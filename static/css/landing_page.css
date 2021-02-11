@@ -1,0 +1,36 @@
+#landing_page_button {
+    width: 140px;
+    height: 160px;
+    transform: rotateZ(-8deg);
+    border: none;
+    background-color: rgba(0,0,0,0);
+    position: relative;
+    left: 42px;
+    bottom: 28px;
+    font-size: 1.2em;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.arrow {
+    position: absolute;
+    color: white;
+}
+
+.arrow-top {
+    transform: rotateZ(35deg);
+    top: 80px;
+    left: 80px;
+
+}
+
+.arrow-mid {
+    transform: rotateZ(-122deg);
+    top: 70px;
+    right: 50px;
+}
+
+.arrow-bottom {
+    transform: rotateZ(-122deg);
+    bottom: 80px;
+    right: 80px;
+}

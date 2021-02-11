@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Catamaran:wght@300&family=Permanent+Marker&display=swap');
+
+
+:root {
+    --mainColour: #ffb122;
+    --secondaryColour: #3A405A;
+    --thirdColour: #F8F4E3;
+  }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Anton', sans-serif;
+}
+
+a,p,li {
+  font-family: 'Catamaran', sans-serif;
+}

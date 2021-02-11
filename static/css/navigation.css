@@ -1,0 +1,111 @@
+.navigation-free-delivery-container {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+nav {
+    height: 65px;
+    background-color: black;
+    padding: 0 10px 0 18px;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 8px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+#logo {
+    font-size: 1.5em;
+    color: var(--mainColour);
+    margin: 0;
+}
+
+a {
+   transition: 0.5s;
+   text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--mainColour);
+}
+
+.burger-container {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.burger-container div {
+    height: 4px;
+    width: 30px;
+    background-color: var(--thirdColour);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 65px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+
+.mobile-links-container {
+    display: none;
+    position: fixed;
+    background-color: black;
+    top: 65px;
+    left: -65vw;
+    bottom: 0;
+    width: 60vw;
+    z-index: 9999;
+    border-right: solid white 1px;
+}
+
+.mobile-links-container li {
+    border-top: solid white 1px;
+    display: block;
+    padding: 15px;
+    margin: 0;
+    color: var(--thirdColour);
+    
+}
+
+.mobile-links-container li:last-child {
+    border-bottom: solid white 1px;
+}
+
+.bg-banner {
+     background: white;
+}
+
+.delivery-van {
+    transform: scaleX(-1);
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+    #logo {
+        font-size: 1.3em;
+
+    }
+}

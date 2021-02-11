@@ -1,1 +1,1 @@
-web: gunicorn plates_direct.wsgi:application
+web: gunicorn supreme_raffle.wsgi:application

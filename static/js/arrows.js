@@ -11,6 +11,9 @@ anime.set('.arrow-bottom', {
     rotateZ: '-102deg',
 });
 
+anime.set('#landingPageButton', {
+    rotateZ: '-20deg',
+});
 
 
 anime({
@@ -46,4 +49,12 @@ anime({
     direction: 'alternate',
   });
 
-console.log('working')
+  anime({
+    targets: '#landingPageButton',
+    easing: 'easeInOutQuad',
+    scale: 1.3,
+    rotateZ: '-12deg',
+    loop: true,
+    duration: 1500,
+    direction: 'alternate',
+  });

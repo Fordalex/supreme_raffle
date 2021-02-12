@@ -75,6 +75,25 @@
                 Supreme Raffle
             </h6>
             <ul class="mobile-links-container">
+                {% if user.is_authenticated %}
+                <li>
+                    <h6 class="m-0">Welcome, {{ user.username }}</h6>
+                </li>
+                {% endif %}
+                <li><a href="{% url 'account_login' %}"><svg class="pr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
+                            y="0px" width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M86,17.2c-19.00027,0 -34.4,15.39973 -34.4,34.4v5.73333c0,19.00027 15.39973,34.4 34.4,34.4c19.00027,0 34.4,-15.39973 34.4,-34.4v-5.73333c0,-19.00027 -15.39973,-34.4 -34.4,-34.4zM85.9888,108.93333c-22.96773,0 -52.43707,12.42324 -60.91667,23.44844c-5.24027,6.81693 -0.25182,16.68489 8.34245,16.68489h105.15964c8.59427,0 13.58271,-9.86796 8.34245,-16.68489c-8.4796,-11.01947 -37.96013,-23.44844 -60.92786,-23.44844z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>Profile</a></li>
                 <li><a><svg class="pr-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
                             viewBox="0 0 172 172" style=" fill:#000000;">
                             <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -117,8 +136,8 @@
                                 </g>
                             </g>
                         </svg>Rules</a></li>
-                <li><a><svg class="pr-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 172 172" style=" fill:#000000;">
+                <li class="border-bottom"><a><svg class="pr-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">
                             <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                                 stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                                 font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -131,6 +150,23 @@
                                 </g>
                             </g>
                         </svg>Contact Us</a></li>
+                {% if user.is_authenticated %}
+                <li class="logout-mobile-button"><a href="{% url 'account_logout' %}"><svg class="pr-2"
+                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
+                            viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M28.66667,17.2c-6.32387,0 -11.46667,5.1428 -11.46667,11.46667v114.66667c0,6.32387 5.1428,11.46667 11.46667,11.46667h80.26667c6.32387,0 11.46667,-5.1428 11.46667,-11.46667v-51.6h-45.86667c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333h45.86667v-51.6c0,-6.32387 -5.1428,-11.46667 -11.46667,-11.46667zM120.4,80.26667v11.46667h32.02604l-13.14636,13.14636c-1.49778,1.43802 -2.10113,3.5734 -1.57735,5.5826c0.52378,2.0092 2.09284,3.57826 4.10204,4.10204c2.0092,0.52378 4.14458,-0.07957 5.5826,-1.57735l22.93333,-22.93333c2.23811,-2.23904 2.23811,-5.86825 0,-8.10729l-22.93333,-22.93333c-1.07942,-1.10959 -2.56163,-1.73559 -4.10964,-1.73568c-2.33302,0.00061 -4.43306,1.41473 -5.31096,3.57628c-0.8779,2.16155 -0.3586,4.6395 1.31331,6.26668l13.14636,13.14636z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>Logout</a></li>
+                {% endif %}
 
             </ul>
             <a class="d-flex flex-column justify-content-center">

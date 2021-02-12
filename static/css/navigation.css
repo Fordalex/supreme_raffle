@@ -16,6 +16,7 @@ nav {
 nav ul {
     margin: 0;
     padding: 0;
+
 }
 
 nav ul li {
@@ -35,6 +36,7 @@ nav ul li {
 a {
    transition: 0.5s;
    text-decoration: none;
+   color: white;
 }
 
 a:hover {
@@ -90,6 +92,17 @@ a:hover {
     
 }
 
+.logout-mobile-button {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+.border-bottom {
+    border-bottom: solid white 1px;
+}
+
 .mobile-links-container li:last-child {
     border-bottom: solid white 1px;
 }
@@ -109,3 +122,4 @@ a:hover {
 
     }
 }
+

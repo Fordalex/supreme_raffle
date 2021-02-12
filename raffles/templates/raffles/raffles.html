@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="py-3 pl-3 m-0">Raffles</h2>
+<hr class="mt-0">
+{% for product in products %}
+
+<div class="raffle-container">
+
+    <div class="raffle-wrapper">
+        <h4>{{ product.name }}</h4>
+        {{ product.description }}
+        <hr>
+        {{ product.image }}
+        <hr>
+        <p class="m-0">Max Tickets PP: {{ product.max_tickets_pp }}</p>
+
+        <hr>
+        <div class="container-fluid d-flex justify-content-between p-0 px-1 pb-2">
+            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />1h</small>
+            <small><img src="https://img.icons8.com/ios/24/000000/two-tickets.png" class="mr-1" />
+                {{ product.max_tickets }} Remaining</small>
+            <small><img src="https://img.icons8.com/ios/24/000000/price-tag-pound.png" class="mr-1" />
+                £{{ product.price}}</small>
+        </div>
+        <hr class="mb-2 mt-2">
+        <a href="{% url 'raffle_info_page' %}" class="btn container-fluid btn-warning">More</a>
+    </div>
+
+</div>
+
+
+
+
+
+{% endfor %}
+
+{% endblock %}

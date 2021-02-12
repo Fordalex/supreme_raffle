@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # custom
     'home',
-
+    'raffles',
   
 ]
 

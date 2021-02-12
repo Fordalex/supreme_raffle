@@ -27,7 +27,7 @@ SECRET_KEY = 'sninnm8o5gg_0m=wp-*mao4+xy4xaqep5t8ud^$q2ioe4x_9t0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['supremeraffle.herokuapp.com']
+ALLOWED_HOSTS = ['supremeraffle.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

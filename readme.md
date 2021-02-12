@@ -4,11 +4,11 @@
 
 Start off installing allauth:
 
-    pip3 install django-allauth
+    pip install django-allauth
 
 Go to the documentation and add the required setting in the settings.py:
 
-    [Documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+    (Documentation)[https://django-allauth.readthedocs.io/en/latest/installation.html]
 
 Go to the project level urls.py file and add the following:
 
@@ -43,6 +43,13 @@ Make a folder called 'allauth' inside the templates directory.
 
 Move the templates with the following command:
 
-    cp -r ../.pip-modules/lib/python.3.6.9/site-packages/allauth/templates/* ./templates/allauth
+    cp -r .venv/lib/python3.6/site-packages/allauth/templates/* ./templates/allauth
 
 (To find out the current vision of python, just type python in the CL)
+
+Update the DIRS array in the settings.py:
+
+    'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],

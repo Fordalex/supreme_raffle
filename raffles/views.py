@@ -12,6 +12,12 @@ def raffle_page(request):
 
     return render(request, 'raffles/raffles.html', context)
 
-def raffle_info_page(request):
+def raffle_info_page(request, pk):
 
-    return render(request, 'raffles/raffle_info.html')
+    product = Product.objects.get(pk=pk)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'raffles/raffle_info.html',context)

@@ -1,17 +1,19 @@
 {% if charity_product %}
-<div class="raffle-container">
-    <div class="my-5">
-        <h3 class=" text-center">Raise money for chairty</h3>
-        <p class="m-0 text-center">Win a great prize and raises money for a good cause.</p>
-    </div>
 
+<div class="py-4 mb-2 bg-white">
+    <h3 class="text-center">Raise money for chairty</h3>
+    <p class="m-0 text-center">Win a great prize and raises money for a good cause.</p>
+</div>
+
+<div class="raffle-container">
     <div class="charity-raffle-wrapper">
         <div class="container-fluid d-flex justify-content-between p-0">
-            <h4>{{ charity_product.name }}</h4>
-
+            <div>
+                <h4 class="m-0">{{ charity_product.name }}</h4>
+                <p class="d-inline">{{ charity_product.description }}</p>
+            </div>
+            <img src="https://img.icons8.com/ios/55/000000/handshake-heart.png" />
         </div>
-
-        {{ charity_product.description }}
         <hr>
         <img src="{{ charity_product.image.url }}" width="100%">
         <hr>

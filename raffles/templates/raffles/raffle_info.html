@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <a class="btn bg-main text-white m-3" href="{% url 'raffle_page' %}">Back To Prizes</a>
@@ -10,8 +10,15 @@
         {% else %}
         <div class="raffle-wrapper">
             {% endif %}
-            <h4>{{ product.name }}</h4>
-            <p class="m-0">{{ product.description }}</p>
+            <div class="container-fluid d-flex justify-content-between p-0">
+                <div>
+                    <h4 class="m-0">{{ product.name }}</h4>
+                    <p class="d-inline">{{ product.description }}</p>
+                </div>
+                {% if product.charity %}
+                <img src="https://img.icons8.com/ios/55/000000/handshake-heart.png" />
+                {% endif %}
+            </div>
             <hr>
             <img src="{{ product.image.url }}" width="100%">
             <hr>
@@ -55,9 +62,9 @@
             <hr>
             <div
                 class="container-fluid d-flex align-items-center justify-content-between my-3 px-0 increment-tickets-container">
-                <button id="lessTickets"><span>-</span></button>
-                <b>0</b>
-                <button id="moreTickets"><span>+</span></button>
+                <button id="lessTickets" onclick="showNewTicketAmount('decrement')"><span>-</span></button>
+                <b id="ticketCount">0</b>
+                <button id="moreTickets" onclick="showNewTicketAmount('increment')"><span>+</span></button>
             </div>
             <hr>
             <button class="btn btn-warning container-fluid">Add Tickets</button>
@@ -71,4 +78,8 @@
     {% endif %}
 
 
+    {% endblock %}
+
+    {% block postloadjs %}
+    <script src="{% static 'js/increment_tickets.js' %}"></script>
     {% endblock %}

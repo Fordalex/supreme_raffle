@@ -40,7 +40,9 @@
 
 #lessTickets span {
     position: relative;
+    display: inline-block;
     bottom: 4px;
+    height: 30px;
 }
 
 #moreTickets {

@@ -18,5 +18,37 @@
 
 .count-down-container .count {
     font-size: 2em;
-    color: orange;
+    color: var(--mainColour);
+}
+
+.increment-tickets-container {
+    border-top: solid grey 1px;
+    border-bottom: solid grey 1px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 50px;
+}
+
+#lessTickets {
+    border: none;
+    background-color: var(--mainColour);
+    padding: 0px 20px;
+    font-size: 2em;
+}
+
+#lessTickets span {
+    position: relative;
+    bottom: 4px;
+}
+
+#moreTickets {
+    border: none;
+    background-color: var(--mainColour);
+    padding: 0px 20px;
+    font-size: 2em;
+}
+
+#moreTickets span {
+    position: relative;
+    bottom: 4px;
 }

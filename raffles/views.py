@@ -17,10 +17,13 @@ def raffle_info_page(request, pk):
 
     product = Product.objects.get(pk=pk)
     charity_product = get_charity_product()
+    products = Product.objects.filter(charity=False)[:3]
 
     context = {
         'product': product,
+        'products': products,
         'charity_product': charity_product,
+
     }
 
     return render(request, 'raffles/raffle_info.html',context)

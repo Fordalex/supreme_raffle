@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<a class="btn bg-main text-white m-3" href="{% url 'raffle_page' %}">Back To Prizes</a>
 
 <div class="raffle-container">
     <div class="raffle-wrapper">
@@ -56,5 +57,9 @@
         <button class="btn btn-warning container-fluid">Add Tickets</button>
     </div>
 </div>
+
+{% if not product.charity %}
+{% include 'includes/charity_post.html' %}
+{% endif %}
 
 {% endblock %}

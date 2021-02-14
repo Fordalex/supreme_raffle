@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from .models import Product
+from functions import get_charity_product
 
 # Create your views here.
 def raffle_page(request):
 
     products = Product.objects.filter(charity=False)
-    charity_product = Product.objects.get(charity=True)
+    charity_product = get_charity_product()
 
     context = {
         'products': products,

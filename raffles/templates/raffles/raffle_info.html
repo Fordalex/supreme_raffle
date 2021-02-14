@@ -64,10 +64,11 @@
         </div>
     </div>
 
-    {% if product.charity %}
     {% include 'includes/ending_soon.html' %}
-    {% else %}
+
+    {% if not product.charity %}
     {% include 'includes/charity_post.html' %}
     {% endif %}
+
 
     {% endblock %}

@@ -1,0 +1,29 @@
+<div class="raffle-container">
+    <div class="my-5">
+        <h3 class=" text-center">Raise money for chairty</h3>
+        <p class="m-0 text-center">Win a great prize and raises money for your charity.</p>
+    </div>
+
+    <div class="charity-raffle-wrapper">
+        <div class="container-fluid d-flex justify-content-between p-0">
+            <h4>{{ charity_product.name }}</h4>
+            <img src="https://img.icons8.com/ios/48/000000/handshake-heart.png" />
+        </div>
+
+        {{ charity_product.description }}
+        <hr>
+        {{ charity_product.image }}
+        <hr>
+        <div class="container-fluid d-flex justify-content-between p-0 px-1 pb-2">
+            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />90 Days</small>
+            <small><img src="https://img.icons8.com/ios/24/000000/money-bag-pound.png" class="mr-1" />
+                £0.00 Rasied</small>
+            <small><img src="https://img.icons8.com/ios/24/000000/price-tag-pound.png" class="mr-1" />
+                £{{ charity_product.price}}</small>
+        </div>
+        <hr class="mb-2 mt-2">
+        <p class="m-0">All profits will to charity of the winners choice!</p>
+        <hr>
+        <a href="{% url 'raffle_info_page' pk=charity_product.id %}" class="btn container-fluid btn-warning">More</a>
+    </div>
+</div>

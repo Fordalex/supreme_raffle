@@ -14,3 +14,11 @@ h1,h2,h3,h4,h5,h6 {
 a,p,li {
   font-family: 'Catamaran', sans-serif;
 }
+
+.text-main {
+  color: var(--mainColour);
+}
+
+.bg-main {
+  background-color: var(--mainColour);
+}

@@ -1,5 +1,9 @@
 # Supreme Raffle
 
+### Features left to implement
+
+- Add a featured product, all profits go to charity. Long time length! 
+
 ### Django Allauth
 
 Start off installing allauth:

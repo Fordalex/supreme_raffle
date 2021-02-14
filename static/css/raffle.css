@@ -8,3 +8,15 @@
     border-radius: 5px;
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.09);
 }
+
+.charity-raffle-wrapper {
+    padding: 10px;
+    border: solid var(--mainColour) 2px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.09);
+}
+
+.count-down-container .count {
+    font-size: 2em;
+    color: orange;
+}

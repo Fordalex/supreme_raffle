@@ -11,13 +11,36 @@
         z-index: 0;
         min-height: 500px;
         max-height: 800px;
+        height: 80vh;
         background: url('{% static 'media/landing_background.jpg' %}');
         background-size: cover;
-        background-position: 45% 40%;
+        background-position: 40% 40%;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+    }
+
+    .landing-container::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    .landing-container h1 {
+        z-index: 1;
+        color: white;
+        font-size: 3.5em;
+    }
+
+    .landing-container a {
+        z-index: 1;
+        font-weight: 600;
+        font-size: 1.3em;
     }
 </style>
 {% endblock %}
@@ -29,7 +52,7 @@ Home
 {% block content %}
 
 
-<div class="landing-container">
+<!-- <div class="landing-container">
     <svg class="arrow arrow-top" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
         viewBox="0 0 172 172" style=" fill:#000000;">
         <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
@@ -72,7 +95,48 @@ Home
 
 
     <a id="landingPageButton" class="text-dark" href="{% url 'raffle_page' %}">Search Prices</a>
+</div> -->
+
+<div class="p-5 landing-container">
+    <div>
+        <h1 class="text-center">Ready to <span class="text-main">win</span>?</h1>
+        <a class="btn bg-main text-white" href="{% url 'raffle_page' %}">View Prizes</a>
+    </div>
 </div>
+
+
+
+{% include 'includes/charity_post.html' %}
+
+<hr>
+
+<h3 class="my-5 text-center">Hurry! Ending Soon</h3>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}

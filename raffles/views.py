@@ -4,10 +4,12 @@ from .models import Product
 # Create your views here.
 def raffle_page(request):
 
-    products = Product.objects.all()
+    products = Product.objects.filter(charity=False)
+    charity_product = Product.objects.get(charity=True)
 
     context = {
         'products': products,
+        'charity_product': charity_product,
     }
 
     return render(request, 'raffles/raffles.html', context)

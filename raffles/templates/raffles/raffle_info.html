@@ -4,82 +4,102 @@
 
 <a class="btn bg-main text-white m-3" href="{% url 'raffle_page' %}">Back To Prizes</a>
 
-<div class="raffle-container">
-    {% if product.charity %}
-    <div class="charity-raffle-wrapper">
-        {% else %}
-        <div class="raffle-wrapper">
-            {% endif %}
-            <div class="container-fluid d-flex justify-content-between p-0">
-                <div>
-                    <h4 class="m-0">{{ product.name }}</h4>
-                    <p class="d-inline">{{ product.description }}</p>
-                </div>
-                {% if product.charity %}
-                <img src="https://img.icons8.com/ios/55/000000/handshake-heart.png" />
-                {% endif %}
-            </div>
-            <hr>
-            <img src="{{ product.image.url }}" width="100%">
-            <hr>
-            <div class="count-down-container d-flex justify-content-between px-2">
-                <div>
-                    <p class="m-0 text-center count">2</p>
-                    <p class="m-0">Days</p>
-                </div>
-                <p class="count">:</p>
-                <div>
-                    <p class="m-0 text-center count">4</p>
-                    <p class="m-0">Hours</p>
-                </div>
-                <p class="count">:</p>
-                <div>
-                    <p class="m-0 text-center count">50</p>
-                    <p class="m-0">Minutes</p>
-                </div>
-                <p class="count">:</p>
-                <div>
-                    <p class="m-0 text-center count">18</p>
-                    <p class="m-0">Seconds</p>
-                </div>
-            </div>
-            <p><b>Max Tickets PP:</b> {{ product.max_tickets_pp }}</p>
-            <p><b>Price Per Ticket:</b> £{{ product.price }}</p>
+<div class="raffle-container bg-white py-4">
+    <div class="container-fluid d-flex justify-content-between p-0">
+        <div>
+            <h4 class="m-0">{{ product.name }}</h4>
+            <p class="d-inline">{{ product.description }}</p>
+        </div>
+        {% if product.charity %}
+        <img src="https://img.icons8.com/ios/55/000000/handshake-heart.png" />
+        {% endif %}
+    </div>
+    <hr>
+    <img src="{{ product.image.url }}" width="100%">
+    <hr>
 
-            <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.tickets_sold }}%;"
-                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="{{ product.max_tickets }}">
-                    {{ product.tickets_sold }}</div>
-            </div>
-            <small><b>Tickets sold:</b> {{ product.tickets_sold }} / {{ product.max_tickets }}</small>
-            <br>
-            <br>
-            <b>Raffle Ends:</b>
-            <br>
-            <p class="m-0">Date: <b>{{ product.end_date|date:"d/m/Y" }}</b>
-                Time: <b>{{ product.end_date|time:"h:i a"}}</b>
+    <div class="py-3">
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: {{ product.tickets_sold }}%;"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="{{ product.max_tickets }}">
+                {{ product.tickets_sold }}</div>
+        </div>
+        <small><b>Tickets sold:</b> {{ product.tickets_sold }} / {{ product.max_tickets }}</small>
+    </div>
+
+
+    <div class="border p-2 count-down-container">
+        <div class="m-0 p-0">
+            <p class="m-0 p-0"> <b class="d-flex justify-content-between">
+                    Raffle Ends: <span>Date: {{ product.end_date|date:"d/m/Y" }},
+                        Time: {{ product.end_date|time:"h:i a"}}</span></b>
             </p>
-            <hr>
-            <div
-                class="container-fluid d-flex align-items-center justify-content-between my-3 px-0 increment-tickets-container">
-                <button id="lessTickets" onclick="showNewTicketAmount('decrement')"><span>-</span></button>
-                <b id="ticketCount">0</b>
-                <button id="moreTickets" onclick="showNewTicketAmount('increment')"><span>+</span></button>
+        </div>
+        <hr class="mt-1">
+        <div class="count-down-wrapper d-flex justify-content-between px-2 pb-2">
+            <div>
+                <p class="m-0 text-center count">{{ product.time_remaining.days }}</p>
+                <p class="m-0">Days</p>
             </div>
-            <hr>
-            <button class="btn btn-warning container-fluid">Add Tickets</button>
+            <p class="count">:</p>
+            <div>
+                <p class="m-0 text-center count">{{ product.time_remaining.hours }}</p>
+                <p class="m-0">Hours</p>
+            </div>
+            <p class="count">:</p>
+            <div>
+                <p class="m-0 text-center count">{{ product.time_remaining.minutes }}</p>
+                <p class="m-0">Minutes</p>
+            </div>
+            <p class="count">:</p>
+            <div>
+                <p class="m-0 text-center count">{{ product.time_remaining.seconds }}</p>
+                <p class="m-0">Seconds</p>
+            </div>
         </div>
     </div>
 
-    {% include 'includes/ending_soon.html' %}
+    <div class="container-fluid d-flex justify-content-between px-1 pt-3">
+        {% if product.time_remaining.days > 0 %}
+        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+            {{ product.time_remaining.days }} Days</small>
+        {% elif product.time_remaining.hours > 0 %}
+        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+            {{ product.time_remaining.hours }} Hours</small>
+        {% elif product.time_remaining.minutes > 0 %}
+        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+            {{ product.time_remaining.minutes }} Mins</small>
+        {% endif %}
+        {% if product.charity %}
+        <small><img src="https://img.icons8.com/ios/24/000000/money-bag-pound.png" class="mr-1" />
+            £0.00 Rasied</small>
+        {% else %}
+        <small><img src="https://img.icons8.com/ios/24/000000/two-tickets.png" class="mr-1" />
+            {{ product.remaining_tickets }} Remaining</small>
+        {% endif %}
+        <small><img src="https://img.icons8.com/ios/24/000000/price-tag-pound.png" class="mr-1" />
+            £{{ charity_product.price}}</small>
+    </div>
+    <hr>
+    <div
+        class="container-fluid d-flex align-items-center justify-content-between my-3 px-0 increment-tickets-container">
+        <button id="lessTickets" onclick="showNewTicketAmount('decrement')"><span>-</span></button>
+        <b id="ticketCount">0</b>
+        <button id="moreTickets" onclick="showNewTicketAmount('increment')"><span>+</span></button>
+    </div>
+    <hr>
+    <button class="btn btn-warning container-fluid">Add Tickets</button>
+</div>
 
-    {% if not product.charity %}
-    {% include 'includes/charity_post.html' %}
-    {% endif %}
+{% include 'includes/ending_soon.html' %}
+
+{% if not product.charity %}
+{% include 'includes/charity_post.html' %}
+{% endif %}
 
 
-    {% endblock %}
+{% endblock %}
 
-    {% block postloadjs %}
-    <script src="{% static 'js/increment_tickets.js' %}"></script>
-    {% endblock %}
+{% block postloadjs %}
+<script src="{% static 'js/increment_tickets.js' %}"></script>
+{% endblock %}

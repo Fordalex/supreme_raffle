@@ -10,6 +10,7 @@
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.09);
 }
 
+
 .charity-raffle-wrapper {
     background-color: white;
     padding: 10px;
@@ -18,7 +19,12 @@
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.09);
 }
 
-.count-down-container .count {
+.count-down-container {
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 6px rgba(0,0,0,0.03);
+}
+
+.count-down-wrapper .count {
     font-size: 2em;
     color: var(--mainColour);
 }
@@ -26,7 +32,7 @@
 .increment-tickets-container {
     border-top: solid grey 1px;
     border-bottom: solid grey 1px;
-    border-radius: 20px;
+    border-radius: 5px;
     overflow: hidden;
     height: 50px;
 }

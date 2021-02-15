@@ -2,7 +2,15 @@
 
 ### Features left to implement
 
-- Add a featured product, all profits go to charity. Long time length! 
+- More carousel page indicator.
+- Add image size for the product cards.
+- Add logic for the time to count down real time.
+- Create a user profile page.
+- Add toasts.
+- Create a bag.
+- Add stripe and checkout.
+- border on the increment tickets needs fixing.
+- If money rasied is 0 change icon and info.
 
 ### Django Allauth
 

@@ -11,6 +11,8 @@
     font-family: 'Permanent Marker', cursive;
 }
 
+/* arrows */
+
 .arrow {
     position: absolute;
     color: white;
@@ -20,7 +22,6 @@
     transform: rotateZ(35deg);
     top: 80px;
     left: 80px;
-
 }
 
 .arrow-mid {
@@ -34,3 +35,54 @@
     bottom: 80px;
     right: 80px;
 }
+
+.home-arrow-container {
+    display:flex;
+    justify-content: center;
+    height:60px;
+    position: absolute;
+    bottom: 0;
+}
+
+.home-arrow-wrapper {
+	display:inline-block;
+    width:20px;
+    margin-bottom:25px;
+}
+
+.arrow-top {
+	width:10px;
+	height:10px;
+	border-right:solid 2px;
+	border-bottom:solid 2px;
+	transform:rotate(45deg);
+	animation:arrows 1.5s ease-in-out infinite;
+}
+
+.arrow-mid {
+	width:10px;
+	height:10px;
+	border-right:solid 2px;
+	border-bottom:solid 2px;
+	transform:rotate(45deg);
+	animation:arrows 1.5s ease-in-out infinite;
+	animation-delay: 0.5s; 
+}
+
+.arrow-bottom {
+	width:10px;
+	height:10px;
+	border-right:solid 2px;
+	border-bottom:solid 2px;
+	transform:rotate(45deg);
+	animation:arrows 1.5s ease-in-out infinite;
+	animation-delay: 1s; 
+}
+
+@keyframes arrows {
+	0% {border-color:rgb(255,255,255,1);}
+	80% {border-color:rgb(255,255,255,0);}
+	100% {border-color:rgb(255,255,255,0);}
+}
+
+/*   arrow animation    */

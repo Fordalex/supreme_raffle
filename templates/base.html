@@ -81,7 +81,7 @@
             <ul class="mobile-links-container">
                 {% if user.is_authenticated %}
                 <li>
-                    <h6 class="m-0">Welcome, {{ user.username }}</h6>
+                    <h6 class="m-0 text-white">Welcome, <span class="text-main">{{ user.username }}</span></h6>
                 </li>
                 <li><a href="{% url 'account_login' %}"><svg class="pr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
                             y="0px" width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">

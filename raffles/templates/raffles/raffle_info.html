@@ -60,16 +60,8 @@
     </div>
 
     <div class="container-fluid d-flex justify-content-between px-1 pt-3">
-        {% if product.time_remaining.days > 0 %}
-        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
-            {{ product.time_remaining.days }} Days</small>
-        {% elif product.time_remaining.hours > 0 %}
-        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
-            {{ product.time_remaining.hours }} Hours</small>
-        {% elif product.time_remaining.minutes > 0 %}
-        <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
-            {{ product.time_remaining.minutes }} Mins</small>
-        {% endif %}
+        <small><img src="https://img.icons8.com/cotton/24/000000/person-male--v2.png" class="mr-1" />
+            Tickets PP</small>
         {% if product.charity %}
         <small><img src="https://img.icons8.com/ios/24/000000/money-bag-pound.png" class="mr-1" />
             £0.00 Rasied</small>

@@ -18,7 +18,16 @@
         <img src="{{ charity_product.image.url }}" width="100%">
         <hr>
         <div class="container-fluid d-flex justify-content-between p-0 px-1 pb-2">
-            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />90 Days</small>
+            {% if charity_product.time_remaining.days > 0 %}
+            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+                {{ charity_product.time_remaining.days }} Days</small>
+            {% elif charity_product.time_remaining.hours > 0 %}
+            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+                {{ charity_product.time_remaining.hours }} Hours</small>
+            {% elif charity_product.time_remaining.minutes > 0 %}
+            <small><img src="https://img.icons8.com/ios/24/000000/time--v1.png" class="mr-1" />
+                {{ charity_product.time_remaining.minutes }} Mins</small>
+            {% endif %}
             <small><img src="https://img.icons8.com/ios/24/000000/money-bag-pound.png" class="mr-1" />
                 £0.00 Rasied</small>
             <small><img src="https://img.icons8.com/ios/24/000000/price-tag-pound.png" class="mr-1" />

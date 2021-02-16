@@ -38,22 +38,22 @@
         <hr class="mt-1">
         <div class="count-down-wrapper d-flex justify-content-between px-2 pb-2">
             <div>
-                <p class="m-0 text-center count">{{ product.time_remaining.days }}</p>
+                <p class="m-0 text-center count" id="countdownDays">{{ product.time_remaining.days }}</p>
                 <p class="m-0">Days</p>
             </div>
             <p class="count">:</p>
             <div>
-                <p class="m-0 text-center count">{{ product.time_remaining.hours }}</p>
+                <p class="m-0 text-center count" id="countdownHours">{{ product.time_remaining.hours }}</p>
                 <p class="m-0">Hours</p>
             </div>
             <p class="count">:</p>
             <div>
-                <p class="m-0 text-center count">{{ product.time_remaining.minutes }}</p>
+                <p class="m-0 text-center count" id="countdownMins">{{ product.time_remaining.minutes }}</p>
                 <p class="m-0">Minutes</p>
             </div>
             <p class="count">:</p>
             <div>
-                <p class="m-0 text-center count">{{ product.time_remaining.seconds }}</p>
+                <p class="m-0 text-center count" id="countdownSecs">{{ product.time_remaining.seconds }}</p>
                 <p class="m-0">Seconds</p>
             </div>
         </div>
@@ -94,4 +94,5 @@
 
 {% block postloadjs %}
 <script src="{% static 'js/increment_tickets.js' %}"></script>
+<script src="{% static 'js/live_countdown.js' %}"></script>
 {% endblock %}

@@ -12,6 +12,8 @@
 - border on the increment tickets needs fixing.
 - If money rasied is 0 change icon and info.
 
+- Prizes shows ended when an prize has ended, but the card before the info isn't correct.
+
 ### Django Allauth
 
 Start off installing allauth:

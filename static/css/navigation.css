@@ -148,6 +148,7 @@ a:hover {
 }
 
 .nav-tabs .nav-link {
+    width: 100vw;
     border: solid 1px grey;
     background-color: white;
     color: black;

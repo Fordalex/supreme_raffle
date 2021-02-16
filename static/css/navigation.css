@@ -29,8 +29,21 @@ nav ul li {
 
 #logo {
     font-size: 1.5em;
-    color: var(--mainColour);
+    color: white;
     margin: 0;
+    position: relative;
+    bottom: 3px;
+}
+
+#logo h6 {
+    font-size: 1.2em;
+}
+
+#logo div span {
+    width: 38%;
+    border-bottom: solid var(--mainColour) 3px;
+    position: relative;
+    bottom: 5px;
 }
 
 a {
@@ -118,8 +131,33 @@ a:hover {
 
 @media only screen and (max-width: 480px) {
     #logo {
-        font-size: 1.3em;
-
+        font-size: 1.15em;
     }
 }
 
+/* Profile navigation */
+
+#myTab .nav .nav-tabs {
+    background-color: white;
+}
+
+.nav-tabs .nav-link.active {
+    border: solid 1px grey;
+    background-color: orange;
+    color: white;
+}
+
+.nav-tabs .nav-link {
+    border: solid 1px grey;
+    background-color: white;
+    color: black;
+}
+
+#myTabContent {
+    background-color: white;
+    padding: 10px;
+}
+
+#myTabContent p {
+    margin: 0;
+}

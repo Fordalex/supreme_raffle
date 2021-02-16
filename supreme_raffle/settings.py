@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # custom
     'home',
     'raffles',
-  
+    'user',  
 ]
 
 MIDDLEWARE = [

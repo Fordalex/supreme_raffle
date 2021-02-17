@@ -24,5 +24,6 @@ urlpatterns = [
     path("raffles/", include("raffles.urls")),
     path('user/', include('user.urls')),
     path('bag/', include('bag.urls')),
+    path('inportant/', include('important.urls')),
     path('accounts/', include('allauth.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

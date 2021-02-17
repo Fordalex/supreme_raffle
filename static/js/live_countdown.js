@@ -13,7 +13,7 @@ function updateTimer() {
         secs--
     }
 
-    if (secs == 0 && mins > 0) {
+    if (secs < 0 && mins > 0) {
         secs = 60
         mins--
     } 
@@ -32,7 +32,7 @@ function updateTimer() {
     }
 
     if (days < 0) {
-        $('.count-down-container').html('<h3 class="text-danger m-0 text-center">Ended!</h3>')
+        $('#info-container').html('<h3 class="text-danger m-0 text-center">Ended!</h3>')
     }
 
     $('#countdownDays').html(days)

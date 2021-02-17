@@ -11,6 +11,7 @@
 - Add stripe and checkout.
 - border on the increment tickets needs fixing.
 - If money rasied is 0 change icon and info.
+- Error if users buys tickets but isn't logged in.
 
 - Prizes shows ended when an prize has ended, but the card before the info isn't correct.
 

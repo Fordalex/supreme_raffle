@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'raffles',
     'user',
     'bag',
+    'important',
 ]
 
 MIDDLEWARE = [

@@ -62,3 +62,8 @@
     position: relative;
     bottom: 4px;
 }
+
+#ticketCount {
+    border: none;
+    text-align: center;
+}

@@ -13,8 +13,16 @@ Bag
 
 <div class="row m-0 p-3 bg-light justify-content-center">
     <div class="col-12 col-lg-9 col-xl-8 order-2 order-lg-1 m-0 px-0 pt-3 px-lg-3 pt-lg-0">
-
-
+        {% for key, value in bag_items.items %}
+        {% for k, v in value.items %}
+        {% if k == 'price' %}
+        <p class="m-0 d-flex justify-content-between"><span class="text-capitalize">{{ k }}</span> £{{ v }}</p>
+        {% else %}
+        <p class="m-0 d-flex justify-content-between"><span class="text-capitalize">{{ k }}</span> {{ v }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+        {% endfor %}
     </div>
 </div>
 

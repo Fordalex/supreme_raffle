@@ -31,8 +31,6 @@ function updateTimer() {
         days--
     }
 
-    console.log(days)
-
     if (days < 0) {
         $('.count-down-container').html('<h3 class="text-danger m-0 text-center">Ended!</h3>')
     }

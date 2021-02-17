@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toasts.css' %}">
     <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
 
 </head>
@@ -232,6 +233,11 @@
             </a>
         </nav>
     </div>
+    {% if messages %}
+    <div class="messages-container">
+        {% include 'includes/toasts/toast_success.html' %}
+    </div>
+    {% endif %}
 
 
     <div id="page-content">

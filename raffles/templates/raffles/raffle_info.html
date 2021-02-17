@@ -76,14 +76,17 @@
             £{{ charity_product.price}}</small>
     </div>
     <hr>
-    <div
-        class="container-fluid d-flex align-items-center justify-content-between my-3 px-0 increment-tickets-container">
-        <button id="lessTickets" onclick="showNewTicketAmount('decrement')"><span>-</span></button>
-        <b id="ticketCount">0</b>
-        <button id="moreTickets" onclick="showNewTicketAmount('increment')"><span>+</span></button>
-    </div>
-    <hr>
-    <button class="btn btn-warning container-fluid">Add Tickets</button>
+    <form action="{% url 'add_to_bag' pk=product.id %}" method="POST">
+        {% csrf_token %}
+        <div
+            class="container-fluid d-flex align-items-center justify-content-between my-3 px-0 increment-tickets-container">
+            <button type="button" id="lessTickets" onclick="showNewTicketAmount('decrement')"><span>-</span></button>
+            <input name="ticketCount" id="ticketCount" value="0">
+            <button type="button" id="moreTickets" onclick="showNewTicketAmount('increment')"><span>+</span></button>
+        </div>
+        <hr>
+        <button type="sumbit" class="btn btn-warning container-fluid">Add Tickets</button>
+    </form>
 </div>
 
 {% include 'includes/ending_soon.html' %}

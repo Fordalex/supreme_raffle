@@ -8,5 +8,5 @@ function showNewTicketAmount(crement) {
             ticketCount--
         }
     }
-    $('#ticketCount').html(ticketCount)
+    $('#ticketCount').attr('value', ticketCount)
 }

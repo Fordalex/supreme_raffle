@@ -225,10 +225,10 @@
                         </g>
                     </g>
                 </svg>
-                {% if total %}
-                <small class="text-center">£{{ total }}</small>
+                {% if grand_total %}
+                <small class="text-center">£{{ grand_total }}</small>
                 {% else %}
-                <small class="text-center text-white">No Tickets</small>
+                <small class="text-center">£{{ grand_total }}</small>
                 {% endif %}
             </a>
         </nav>

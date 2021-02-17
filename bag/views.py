@@ -28,11 +28,19 @@ def add_to_bag(request, pk):
     product_info = {
         'name': product.name,
         'price': product.price,
-        'tickets': int(ticketCount)
+        'tickets': int(ticketCount),
+        'total': round(float(product.price) * int(ticketCount), 2),
     }
-    
     bag[product.name] = product_info
 
+    # Total cost of tickets
+    grand_total = 0
+    for key, value in bag.items():
+        print(grand_total)
+        print(value['total'])
+        grand_total += value['total']
+
+    request.session['grand_total'] = round(grand_total, 2)
     request.session['bag'] = bag
 
     return redirect('raffle_info_page', pk)
